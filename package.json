@@ -1,0 +1,48 @@
+{
+  "name": "buyit-backend-app",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "repository": "git@github.com:IshopIT/buyit-backend-app.git",
+  "author": "Pedro Sobral <pedro.sobral@wearearch.com>",
+  "license": "MIT",
+  "scripts": {
+    "generate": "graphql-codegen --config codegen.yml",
+    "compile": "npm run generate && tsc",
+    "postinstall": "npm run compile",
+    "start": "npm run compile && node ./dist/index.js",
+    "watch": "concurrently  --names \"CodeGen,TS,Nodemon\" -c \"bgYellow,bgBlue,bgMagenta\" \"graphql-codegen --watch 'src/**/*.ts'\"  \"tsc -w \" \"nodemon ./dist/index.js \""
+
+  },
+  "dependencies": {
+    "@apollo/server": "^4.2.2",
+    "express": "^4.18.2",
+    "graphql": "^16.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.15.0",
+    "@graphql-codegen/typescript": "2.8.3",
+    "@graphql-codegen/typescript-resolvers": "2.7.8",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-no-relative-import-paths": "^1.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "mongoose": "^6.7.5",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.0",
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^5.0.3",
+    "tsconfig-paths": "^4.1.0",
+    "typescript": "^4.9.3",
+    "@graphql-codegen/typescript-document-nodes": "2.3.8",
+    "@graphql-codegen/typescript-mongodb": "2.4.6",
+    "@graphql-codegen/introspection": "2.2.1"
+  }
+}
