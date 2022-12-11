@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "rootDirs": ["src"],
+    "baseUrl": ".",
+    "outDir": "dist",
+    "lib": ["es2020"],
+    "target": "es2020",
+    "paths": {
+      "@api/*":["generated/*"]
+    },
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "types": ["node"]
+  }
+}
